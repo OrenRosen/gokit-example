@@ -46,8 +46,8 @@ func MakeEndpointGetArticle(s Service) endpoint.Endpoint {
 // create article
 
 type CreateArticleRequestModel struct {
-	Text  string
 	Title string
+	Text  string
 }
 
 func (r CreateArticleRequestModel) ToArticle() article.Article {

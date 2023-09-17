@@ -53,12 +53,17 @@ func encodeGetArticleResponse(ctx context.Context, w http.ResponseWriter, respon
 
 // create article
 
+type createArticleRequest struct {
+	Title string `json:"title"`
+	Text  string `json:"text"`
+}
+
 func decodeCreateArticleRequest(ctx context.Context, r *http.Request) (request interface{}, err error) {
-	var req CreateArticleRequestModel
+	var req createArticleRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
 		return nil, fmt.Errorf("decodeCreateArticleRequest %s", err)
 	}
-	return req, nil
+	return CreateArticleRequestModel(req), nil
 }
 
 func encodeCreateArticleResponse(ctx context.Context, w http.ResponseWriter, response interface{}) error {

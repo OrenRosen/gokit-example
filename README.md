@@ -24,3 +24,5 @@ POST 127.0.0.1/9999/article/:id
 }
 ```
 
+The full article describing the Clean Architecture concepts can be found here:
+https://orenrose.medium.com/clean-architecture-in-golang-with-go-kit-e5b716a3b881
